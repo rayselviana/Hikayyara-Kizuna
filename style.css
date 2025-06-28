@@ -495,8 +495,41 @@ p {
     margin-bottom: 40px;
 }
 
-.form-group label {
+/* --- Form Styles Enhancements --- */
+.form-section {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px; /* Space between fieldsets */
+    background-color: var(--white); /* Ensure fieldset background is white */
+}
+
+.form-section legend {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 10px;
+    margin-left: -10px; /* Adjust legend position */
+    margin-bottom: 20px; /* Space below legend */
+}
+
+.form-intro-text {
+    font-size: 1.05em;
     color: var(--text-dark);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 25px; /* Spacing between form groups */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    display: block; /* Ensure label is on its own line */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-dark); /* Ensure label color is dark */
 }
 
 .form-group input[type="text"],
@@ -504,24 +537,186 @@ p {
 .form-group input[type="email"],
 .form-group input[type="tel"],
 .form-group textarea {
-    background-color: var(--light-blue-gray); /* Input fields jadi abu-abu muda */
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
     color: var(--text-dark);
-    border-color: var(--border-color);
+    background-color: var(--light-blue-gray); /* Input fields jadi abu-abu muda */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-light); /* Placeholder text color */
+    opacity: 0.8;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
+    outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.2);
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.2); /* Accent shadow on focus */
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-hint {
+    font-size: 0.85em;
+    color: var(--text-light);
+    margin-top: 5px;
+    display: block; /* Ensure hint is on its own line */
+}
+
+.optional-text {
+    font-size: 0.85em;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+/* Checkbox Grid for Services */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Atur agar setidaknya 220px */
+    gap: 15px; /* Jarak antar checkbox group */
+    margin-top: 15px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0; /* Reset margin-bottom for individual checkbox-group */
+}
+
+.checkbox-group input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-group input[type="checkbox"]:checked::after {
+    content: '\2713'; /* Checkmark symbol */
+    font-size: 14px;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
 }
 
 .checkbox-group label {
+    font-weight: 400;
     color: var(--text-dark); /* Label checkbox dark */
+    cursor: pointer;
+    margin-bottom: 0; /* Reset margin-bottom for checkbox labels */
 }
 
 .checkbox-group label a {
     color: var(--primary-color);
+    text-decoration: underline;
 }
+
+.checkbox-group label a:hover {
+    color: var(--accent-color);
+}
+
+.statement-list {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.statement-list p {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    color: var(--text-dark); /* Ensure text is readable */
+    font-size: 0.95em;
+}
+
+.statement-list p i {
+    color: var(--primary-color); /* Icon color */
+    margin-right: 10px;
+    font-size: 1.2em;
+    line-height: 1.7; /* Align icon with text line-height */
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    margin-top: 30px;
+}
+
+.form-message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.form-message.success-text {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error-text {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Digital Signature Area */
+.signature-section {
+    text-align: center;
+}
+
+.pdf-signature-area {
+    min-height: 80px; /* Provide space for the signature */
+    border: 1px dashed var(--border-color);
+    background-color: var(--light-blue-gray);
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 1.2em;
+    color: var(--text-light);
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.signature-text {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-family: 'Times New Roman', serif; /* A more "signature-like" font */
+}
+
+.signature-label {
+    font-size: 0.9em;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+/* --- End Form Styles Enhancements --- */
+
 
 /* CTA DM Instagram */
 .cta-dm-instagram {
@@ -787,6 +982,154 @@ p {
     color: rgba(255,255,255,0.6);
 }
 
+/* --- PDF Template Styles --- */
+.pdf-content {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    line-height: 1.6;
+}
+
+.pdf-header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.pdf-logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.pdf-header h1 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.pdf-date {
+    font-size: 0.9em;
+    color: var(--text-light);
+}
+
+.pdf-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.pdf-section h2 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 5px;
+    text-align: left; /* Override global h2 text-align */
+}
+
+.pdf-section p {
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.pdf-section p strong {
+    color: var(--primary-color);
+}
+
+.pdf-services-list {
+    list-style: none; /* Remove default list bullets */
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 2 columns for services */
+    gap: 10px;
+}
+
+.pdf-services-list li {
+    background-color: var(--light-blue-gray);
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: var(--text-dark);
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.pdf-services-list li::before {
+    content: '\2022'; /* Custom bullet point */
+    color: var(--accent-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.pdf-statement-list {
+    margin-top: 15px;
+}
+
+.pdf-statement-list p {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-size: 0.9em;
+}
+
+.pdf-statement-list p i {
+    color: green; /* Or a specific checkmark color */
+    margin-right: 8px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.signature-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.pdf-signature-area {
+    min-height: 80px;
+    border: 1px dashed #ccc;
+    background-color: #f9f9f9;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+    font-size: 1.2em;
+    color: #888;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.signature-text {
+    font-weight: bold;
+    color: #333;
+    font-family: 'Times New Roman', serif;
+}
+
+.signature-label {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.pdf-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+    font-size: 0.85em;
+    color: #777;
+}
+/* --- End PDF Template Styles --- */
+
 /* --- Responsive Design (CSS Media Queries) --- */
 @media (max-width: 992px) {
     .main-nav {
@@ -840,6 +1183,31 @@ p {
 
     .legal-section h2 {
         font-size: 1.8em;
+    }
+
+    /* Form specific adjustments for smaller screens */
+    .form-section {
+        padding: 25px;
+    }
+
+    .form-section legend {
+        font-size: 1.5em;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust for narrower screens */
+    }
+
+    .pdf-content {
+        padding: 30px;
+    }
+
+    .pdf-header h1 {
+        font-size: 1.8em;
+    }
+
+    .pdf-section h2 {
+        font-size: 1.3em;
     }
 }
 
@@ -903,6 +1271,35 @@ p {
     .legal-section .last-updated {
         text-align: center;
     }
+
+    /* Form specific adjustments for small mobile */
+    .form-section {
+        padding: 20px;
+    }
+
+    .form-section legend {
+        font-size: 1.3em;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+
+    .pdf-content {
+        padding: 20px;
+    }
+
+    .pdf-header h1 {
+        font-size: 1.5em;
+    }
+
+    .pdf-section h2 {
+        font-size: 1.2em;
+    }
+
+    .pdf-services-list {
+        grid-template-columns: 1fr; /* Single column for PDF services on small screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -929,3 +1326,4 @@ p {
         padding: 30px 20px;
     }
 }
+
