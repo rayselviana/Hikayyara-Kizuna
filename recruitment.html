@@ -73,7 +73,7 @@
                         <span class="step-number">1</span>
                         <h3>Pahami Syarat & Ketentuan</h3>
                         <p>Baca dan setujui Syarat & Ketentuan Layanan Talent kami untuk memastikan keselarasan nilai.</p>
-                        <a href="terms.html" class="btn btn-secondary small">Baca S&K Talent</a>
+                        <a href="terms.html" class="btn btn-secondary btn-small">Baca S&K Talent</a>
                     </div>
                     <div class="step-item">
                         <span class="step-number">2</span>
@@ -99,47 +99,119 @@
                     <p>Tidak ada keharusan untuk pertemuan fisik. Semua layanan kami dilakukan secara online untuk menjaga privasi dan keamanan Anda serta pengguna.</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Belum 18 tahun gimana?</h3>
-                    <p>Untuk menjaga standar profesionalisme dan keamanan, kami mewajibkan semua talent berusia minimal 18 tahun ke atas.</p>
-                </div>
-                <div class="faq-item">
                     <h3>Apakah ada pelatihan?</h3>
                     <p>Kami menyediakan panduan komprehensif dan kode etik untuk memastikan semua talent memahami standar layanan Hikayyara Kizuna.</p>
                 </div>
             </div>
 
             <div class="recruitment-form-section">
-                <h2>Formulir Pendaftaran Talent</h2>
+                <h2>Formulir Pendaftaran Talent Hikayyara Kizuna</h2>
+                <p class="form-intro-text">Mari bergabung dengan keluarga Hikayyara Kizuna dan sebarkan kehangatan emosional! Silakan isi formulir di bawah ini dengan lengkap dan jujur.</p>
+
                 <form id="talentRegistrationForm">
-                    <div class="form-group">
-                        <label for="fullName">Nama Lengkap Anda</label>
-                        <input type="text" id="fullName" name="fullName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Usia</label>
-                        <input type="number" id="age" name="age" min="18" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Aktif</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="whatsapp">Nomor WhatsApp (Aktif)</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10,15}" placeholder="Contoh: 6281234567890" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="domicile">Domisili (Kota/Kabupaten)</label>
-                        <input type="text" id="domicile" name="domicile" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="reason">Mengapa Anda tertarik menjadi talent Hikayyara Kizuna? (Opsional)</label>
-                        <textarea id="reason" name="reason" rows="5"></textarea>
-                    </div>
-                    <div class="form-group checkbox-group">
-                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                        <label for="agreeTerms">Saya telah membaca dan menyetujui <a href="terms.html" target="_blank">Syarat & Ketentuan Layanan Talent</a> serta <a href="privacy.html" target="_blank">Kebijakan Privasi</a> Hikayyara Kizuna.</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+                    <fieldset class="form-section">
+                        <legend>1. Informasi Diri Talent</legend>
+                        <div class="form-group">
+                            <label for="fullName">Nama Asli Lengkap *</label>
+                            <input type="text" id="fullName" name="fullName" required placeholder="Sesuai KTP/Kartu Identitas">
+                        </div>
+                        <div class="form-group">
+                            <label for="platformName">Nama Panggilan di Platform *</label>
+                            <input type="text" id="platformName" name="platformName" required placeholder="Nama yang akan ditampilkan ke user">
+                            <small class="form-hint">Nama samaran sangat diperbolehkan untuk menjaga privasi.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Umur *</label>
+                            <input type="number" id="age" name="age" min="1" required placeholder="Contoh: 20">
+                            <small class="form-hint">Kami menerima talent dari semua rentang usia yang memiliki empati dan komitmen.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="domicile">Domisili (Kota/Kabupaten) <span class="optional-text">(Opsional)</span></label>
+                            <input type="text" id="domicile" name="domicile" placeholder="Contoh: Denpasar, Jakarta, Surabaya">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Aktif *</label>
+                            <input type="email" id="email" name="email" required placeholder="contoh@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">Nomor WhatsApp Aktif *</label>
+                            <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{9,15}" placeholder="Contoh: 6281234567890 (tanpa spasi/strip)" required>
+                            <small class="form-hint">Kami akan menghubungi Anda melalui WhatsApp.</small>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-section">
+                        <legend>2. Layanan yang Bersedia Disediakan *</legend>
+                        <p class="form-intro-text">Pilih layanan yang Anda nyaman untuk berikan. Anda bisa memilih lebih dari satu.</p>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceChat" name="services" value="Curhat via Chat">
+                                <label for="serviceChat">Curhat via Chat</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceVoiceCall" name="services" value="Voice Call">
+                                <label for="serviceVoiceCall">Voice Call</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceVideoCall" name="services" value="Video Call">
+                                <label for="serviceVideoCall">Video Call</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceRoleplayAudio" name="services" value="Roleplay (Audio)">
+                                <label for="serviceRoleplayAudio">Roleplay (Audio)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceRoleplayVideo" name="services" value="Roleplay Ringan (Video Sopan)">
+                                <label for="serviceRoleplayVideo">Roleplay Ringan (Video Sopan)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceVirtualGFBF" name="services" value="Pacar Virtual (Online Only)">
+                                <label for="serviceVirtualGFBF">Pacar Virtual (Online Only)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceMeetOffline" name="services" value="Meet Offline (dengan SOP)">
+                                <label for="serviceMeetOffline">Meet Offline (dengan SOP)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceSoftContent" name="services" value="Konten Soft (Suara Lucu, ASMR, dll.)">
+                                <label for="serviceSoftContent">Konten Soft (Suara Lucu, ASMR, dll.)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="serviceOpenRequest" name="services" value="Open Request">
+                                <label for="serviceOpenRequest">Open Request (selama sesuai etika)</label>
+                            </div>
+                        </div>
+                        <p id="servicesError" class="form-message error-text" style="display: none;">Harap pilih minimal satu jenis layanan.</p>
+                    </fieldset>
+
+                    <fieldset class="form-section">
+                        <legend>3. Pernyataan & Persetujuan Talent</legend>
+                        <p class="form-intro-text">Dengan mendaftar, Anda menyetujui poin-poin penting berikut yang akan mendukung Anda sebagai talent:</p>
+                        <div class="statement-list">
+                            <p><i class="fas fa-check-circle"></i> Talent **berhak menolak** permintaan atau sesi yang dirasa tidak nyaman/tidak etis.</p>
+                            <p><i class="fas fa-check-circle"></i> Talent **bebas menggunakan nama samaran** untuk menjaga privasi pribadi.</p>
+                            <p><i class="fas fa-check-circle"></i> **Privasi** setiap percakapan dan data talent akan **dijaga ketat** oleh sistem Hikayyara Kizuna.</p>
+                            <p><i class="fas fa-check-circle"></i> Talent **dapat mengubah pilihan layanan** yang disediakan kapan saja setelah bergabung.</p>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                            <label for="agreeTerms">Saya telah membaca dan menyetujui <a href="terms.html" target="_blank">Syarat & Ketentuan Layanan Talent</a> serta <a href="privacy.html" target="_blank">Kebijakan Privasi</a> Hikayyara Kizuna.</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="form-section">
+                        <legend>4. Tanda Tangan Digital & Tanggal</legend>
+                        <div class="form-group">
+                            <label for="digitalSignature">Tanda Tangan Digital (Ketik Nama Asli Anda) *</label>
+                            <input type="text" id="digitalSignature" name="digitalSignature" required placeholder="Ketik nama asli lengkap Anda di sini">
+                        </div>
+                        <div class="form-group">
+                            <label for="submissionDate">Tanggal Pengajuan</label>
+                            <input type="text" id="submissionDate" name="submissionDate" readonly>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-primary btn-submit">Daftar Sekarang & Gabung Keluarga Hikayyara!</button>
                     <p id="formMessage" class="form-message"></p>
                 </form>
             </div>
@@ -187,6 +259,59 @@
             </div>
         </div>
     </footer>
+
+    <div id="pdf-template" style="display: none;">
+        <div class="pdf-content">
+            <div class="pdf-header">
+                <img src="https://via.placeholder.com/150x50/2C3E50/FFFFFF?text=Hikayyara+Kizuna" alt="Hikayyara Kizuna Logo" class="pdf-logo">
+                <h1>Formulir Pendaftaran Talent Hikayyara Kizuna</h1>
+                <p class="pdf-date" id="pdf-submission-date"></p>
+            </div>
+
+            <div class="pdf-section">
+                <h2>1. Informasi Diri Talent</h2>
+                <p><strong>Nama Asli Lengkap:</strong> <span id="pdf-fullName"></span></p>
+                <p><strong>Nama Panggilan di Platform:</strong> <span id="pdf-platformName"></span></p>
+                <p><strong>Umur:</strong> <span id="pdf-age"></span> tahun</p>
+                <p><strong>Domisili:</strong> <span id="pdf-domicile"></span></p>
+                <p><strong>Email Aktif:</strong> <span id="pdf-email"></span></p>
+                <p><strong>Nomor WhatsApp Aktif:</strong> <span id="pdf-whatsapp"></span></p>
+            </div>
+
+            <div class="pdf-section">
+                <h2>2. Layanan yang Bersedia Disediakan</h2>
+                <ul id="pdf-services-list" class="pdf-services-list">
+                    </ul>
+            </div>
+
+            <div class="pdf-section">
+                <h2>3. Pernyataan & Persetujuan Talent</h2>
+                <div class="pdf-statement-list">
+                    <p><i class="fas fa-check-circle"></i> Talent berhak menolak permintaan atau sesi yang dirasa tidak nyaman/tidak etis.</p>
+                    <p><i class="fas fa-check-circle"></i> Talent bebas menggunakan nama samaran untuk menjaga privasi pribadi.</p>
+                    <p><i class="fas fa-check-circle"></i> Privasi setiap percakapan dan data talent akan dijaga ketat oleh sistem Hikayyara Kizuna.</p>
+                    <p><i class="fas fa-check-circle"></i> Talent dapat mengubah pilihan layanan yang disediakan kapan saja setelah bergabung.</p>
+                    <p><i class="fas fa-check-circle"></i> Saya telah membaca dan menyetujui Syarat & Ketentuan Layanan Talent serta Kebijakan Privasi Hikayyara Kizuna.</p>
+                </div>
+            </div>
+
+            <div class="pdf-section signature-section">
+                <h2>4. Tanda Tangan Digital</h2>
+                <div class="pdf-signature-area">
+                    <p id="pdf-digitalSignature" class="signature-text"></p>
+                </div>
+                <p class="signature-label">Tanda Tangan Digital oleh Talent</p>
+            </div>
+
+            <div class="pdf-footer">
+                <p>Terima kasih telah bergabung dengan Hikayyara Kizuna. Mari bersama-sama membangun koneksi emosional yang hangat dan tulus.</p>
+                <p>&copy; 2025 Hikayyara Kizuna. All Rights Reserved. Part of Hikayyara Corporation.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <script src="script.js"></script>
 </body>
